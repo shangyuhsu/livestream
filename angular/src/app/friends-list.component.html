@@ -1,0 +1,24 @@
+<div class="outlet">
+
+<h2>friends</h2>
+<ul>
+    <li *ngFor="let friend of friends">{{friend.username}}</li>
+</ul>
+
+<h2>requests</h2>
+<ul>
+    <li *ngFor="let request of requests">{{request.username}}  
+        <button (click)="acceptRequest(request.username)" class="btn" >accept</button>
+    </li>
+</ul>
+
+<h2>send a request</h2>
+<div *ngIf="message" class="error">{{message}}</div>
+<form
+[formGroup]="requestForm"
+(ngSubmit)="onSubmit(requestForm.value)">
+    <input type="text" name="username" id="username" formControlName="username">
+    <button type="submit" [disabled]="!requestForm.valid" class="btn" >send</button>
+</form>
+
+</div>

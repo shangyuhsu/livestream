@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+.btn {
+    color: #fdfdfd;
+    background-color: #9a9c24;
+  }
+
+  body {
+    background-color: #7f8078;
+    color:#fdfdfd;
+  }
+
+  input[type=text] {
+    background-color:#fdfdfd;
+    color: #7f8078;
+  }
+  input[type=password] {
+    background-color:#fdfdfd;
+    color: #7f8078;
+  }
+
+  .error {
+    color: red;
+}

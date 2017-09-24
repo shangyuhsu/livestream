@@ -1,0 +1,28 @@
+<header>
+    <h2>create new user</h2>
+  </header>
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit(form.value)">
+
+        <div *ngIf="usernameTaken" class="error">username taken</div>
+        <div *ngIf="form.controls.username.errors?.required" class="error">username required</div>
+        <label for="username">username</label>
+        <br/>
+        <input type="text" name="username" id="username" formControlName="username">
+        <br/>
+        <br/>
+        <div *ngIf="form.controls.password.errors?.required" class="error">password required</div>
+        <label for="password">password</label>
+        <br/>
+        <input type="password" name="password" id="password" formControlName="password">
+        <br/>
+        <br/>
+        <div *ngIf="form.errors?.mismatch && !form.controls.confirm.errors?.required" class="error">doesn't match password</div>
+        <label for="confirm">confirm password</label>
+        <br/>
+        <input type="password" name="confirm" id="confirm" formControlName="confirm">
+        <br/>
+        <br/>
+    <button type="submit" [disabled]="!form.valid" class="btn" >create</button>
+  </form>

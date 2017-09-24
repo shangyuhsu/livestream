@@ -1,0 +1,17 @@
+<div *ngIf="session">
+<h3><em>"{{session.blurb}}" - {{session.username}}</em></h3>
+
+<audio controls autoplay>
+        <source src="http://localhost:8000/{{session.username}}.mp3" type="audio/mp3">
+  </audio>
+
+</div>
+
+<br/>
+<br/>
+
+<div>
+    <p *ngFor="let message of messages">{{message}}</p>
+</div>
+
+<input (input)="message=$event.target.value" value="{{message}}" (keyup.enter)="sendMessage();">  <button (click)="sendMessage();" class="btn" >Send</button>

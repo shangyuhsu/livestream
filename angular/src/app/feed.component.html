@@ -1,0 +1,9 @@
+<h2>start streaming!</h2>
+<button routerLink="/mystream" class="btn" >stream</button>
+<h2>who's live</h2>
+<ul>
+<li *ngFor="let stream of streams">
+{{stream.username}}: {{stream.blurb}}
+<button [routerLink]="'/stream/'+stream.username" class="btn" >listen</button>
+</li>
+</ul>

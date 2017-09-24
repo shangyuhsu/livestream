@@ -1,0 +1,12 @@
+<nav *ngIf="username">
+    <button class="btn" routerLink="">home</button>
+    <button class="btn" routerLink="/friends">friends</button>
+    <em><strong>~~welcome {{username}}~~</strong></em>
+    <button class="btn" routerLink="/mystream">start stream</button>
+    <button class="btn" (click)="logout()">logout</button>
+</nav>
+
+<br/>
+<div class="outlet">
+<router-outlet></router-outlet>
+</div>

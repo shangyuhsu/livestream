@@ -1,0 +1,20 @@
+<header>
+    <h2>login</h2>
+</header>
+<br/>
+
+<form
+[formGroup]="form"
+(ngSubmit)="onSubmit(form.value)">
+    <label for="username">username</label>
+    <input type="text" name="username" id="username" formControlName="username">
+    <br/>
+    <br/>
+    <label for="password">password</label>
+    <input type="password" name="password" id="password" formControlName="password">
+    <br/>
+    <br/>
+    <button type="submit" class="btn" >login</button>
+</form>
+<br/>
+<button routerLink="/createuser" class="btn" >register</button>

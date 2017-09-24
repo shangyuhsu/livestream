@@ -1,0 +1,19 @@
+
+<h1>now live!</h1>
+<h3><em>"{{session.blurb}}" - {{session.username}}</em></h3>
+<button (click)="start()" [disabled] = "isStreaming" class="btn" >start</button>
+<button (click)="stop()" [disabled] = "!isStreaming" class="btn" >stop</button>
+<br/>
+<br/>
+<div>
+    <p *ngFor="let message of messages">{{message}}</p>
+</div>
+    
+<input (input)="message=$event.target.value" value="{{message}}" (keyup.enter)="sendMessage();">  <button (click)="sendMessage();" class="btn" >send</button>
+    
+<br/>
+<br/>
+<br/>
+<br/>
+
+<button routerLink='' class="btn" >end session</button>
